@@ -3,6 +3,7 @@ class libro():
         self.autor = autor
         self.titulo = titulo
         self.editorial = editorial
+    
     def libro(self):
         print("Libro:", self.titulo, "de", self.autor, "de la editorial", self.editorial)
 

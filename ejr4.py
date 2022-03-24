@@ -29,7 +29,29 @@ class CuentaBancaria:
             print("Se ha realizado la tranferencia de", dinero, "euros, a la cuenta", cuenta)
             print("Su saldo actual es", self.saldo)
         
-ejercicio = CuentaBancaria("123", "Gonzalo", "24/03", "123456789", float(221.5))
+class CuentaPlazoFijo(CuentaBancaria):
+    def __init__(self, id, titular, apertura, numero_cuenta, saldo, fecha_vencimiento):
+        super().__init__(self,id, titular, apertura, numero_cuenta, saldo)
+        self.fecha_vencimiento = fecha_vencimiento
+
+    def retirar(self):
+        if self.fecha_vencimiento > self.apertura:
+            dinero = float(input("Escriba la cantidad que desea retirar: "))
+            if dinero > self.saldo:
+                print("La cantidad de dinero a retirar es mayor que la del saldo")
+            else:
+                self.saldo = self.saldo - dinero
+                self.saldo = self.saldo * 0.95
+                print("Aquí está el dinero: ", dinero, "euros")
+                print("Este es su saldo disponible: ", self.saldo, "euros")
+        else:
+            super().retirar(self)
+
+    def ingresar(self):
+        super().ingresar(self)
+    
+    def transferir(self):
+        super().transferir(self)
+
+ejercicio = CuentaPlazoFijo("123", "Gonzalo", "7/23", "1345", float(154.12), "7/24")
 ejercicio.retirar()
-ejercicio.ingresar()
-ejercicio.transferir()

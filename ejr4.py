@@ -31,7 +31,7 @@ class CuentaBancaria:
         
 class CuentaPlazoFijo(CuentaBancaria):
     def __init__(self, id, titular, apertura, numero_cuenta, saldo, fecha_vencimiento):
-        super().__init__(self,id, titular, apertura, numero_cuenta, saldo)
+        super().__init__(id, titular, apertura, numero_cuenta, saldo)
         self.fecha_vencimiento = fecha_vencimiento
 
     def retirar(self):
@@ -45,13 +45,13 @@ class CuentaPlazoFijo(CuentaBancaria):
                 print("Aquí está el dinero: ", dinero, "euros")
                 print("Este es su saldo disponible: ", self.saldo, "euros")
         else:
-            super().retirar(self)
+            super().retirar()
 
     def ingresar(self):
-        super().ingresar(self)
+        super().ingresar()
     
     def transferir(self):
-        super().transferir(self)
+        super().transferir()
 
-ejercicio = CuentaPlazoFijo("123", "Gonzalo", "7/23", "1345", float(154.12), "7/24")
-ejercicio.retirar()
+#ejercicio = CuentaPlazoFijo("123", "Gonzalo", "7/23", "1345", float(154.12), "7/22")
+#ejercicio.ingresar()
